@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { bold } from 'ansi-colors';
 
-const TextStyles =StyleSheet.create({
+const TextStyles = StyleSheet.create({
     dark: {
         textAlign: 'center',
         color: '#FFF',

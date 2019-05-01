@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Button from './src/components/Button';
+import Slider from './src/components/Slider';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,9 +23,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Slider></Slider>
         <Button styleType="clear" text="Log In"/>
         <Button styleType="dark" text="Sign Up"/>
       </View>
@@ -35,9 +34,10 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
   },
   welcome: {
     fontSize: 20,

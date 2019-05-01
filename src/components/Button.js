@@ -3,7 +3,7 @@ import {TouchableOpacity, Text} from 'react-native';
 import {ButtonStyles, TextStyles} from '../styles/Buttons';
 import {Alert} from 'react-native';
 
-const fetchLocation = props => {
+const button = props => {
   
   const buttonStyle = ButtonStyles[props.styleType];
   const textStyle = TextStyles[props.styleType];
@@ -19,4 +19,4 @@ const fetchLocation = props => {
   );
 };
 
-export default fetchLocation;
+export default button;
