@@ -8,28 +8,31 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import Button from './src/components/Button';
-import Slider from './src/components/Slider';
+import Login from './src/features/Login/login';
+import Registration from './src/features/Registration/registration';
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const AppNavigator = createStackNavigator(
+  {
+    Home: Login,
+    Registration: Registration
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Slider></Slider>
-        <Button styleType="clear" text="Log In"/>
-        <Button styleType="dark" text="Sign Up"/>
-      </View>
+      <AppContainer />
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {

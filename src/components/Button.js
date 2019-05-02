@@ -9,7 +9,7 @@ const button = props => {
   const textStyle = TextStyles[props.styleType];
 
   return (
-    <TouchableOpacity style={[ButtonStyles.button, buttonStyle]} onPress={() => {
+    <TouchableOpacity style={[ButtonStyles.button, buttonStyle, props.style]} onPress={() => {
       Alert.alert('You tapped the ' + props.styleType + ' Button!');
     }}>
       <Text style={textStyle}>
